@@ -1,19 +1,20 @@
-require "logstash/devutils/rspec/spec_helper"
+require 'spec_helper'
 require "logstash/filters/example"
 
 describe LogStash::Filters::Example do
   describe "Set to Hello World" do
-    config <<-CONFIG
+    let(:config) do <<-CONFIG
       filter {
         example {
           message => "Hello World"
         }
       }
     CONFIG
+    end
 
     sample("message" => "some text") do
-      insist { subject }.include?("message")
-      insist { subject["message"] } == "Hello World"
+      expect(subject).to include("message")
+      expect(subject['message']).to eq('Hello World')
     end
   end
 end
