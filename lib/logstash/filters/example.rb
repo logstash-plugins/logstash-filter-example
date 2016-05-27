@@ -36,7 +36,7 @@ class LogStash::Filters::Example < LogStash::Filters::Base
       # config file.
 
       # using the event.set API
-      event.set("message") = @message
+      event.set("message", @message)
       # correct debugging log statement for reference
       # using the event.get API
       @logger.debug? && @logger.debug("Message is now: #{event.get("message")}")
