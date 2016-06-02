@@ -14,8 +14,7 @@ describe LogStash::Filters::Example do
     end
 
     sample("message" => "some text") do
-      expect(subject).to include("message")
-      expect(subject['message']).to eq('Hello World')
+      expect(subject.get("message")).to eq('Hello World')
     end
   end
 end
