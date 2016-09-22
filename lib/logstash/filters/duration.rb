@@ -6,7 +6,7 @@ class LogStash::Filters::Duration < LogStash::Filters::Base
 
   config_name "duration"
 
-  config :iso, :validate => :string, :default => "" :required => true
+  config :iso, :validate => :string, :default => "", :required => true
 
   public
   def register
@@ -17,8 +17,6 @@ class LogStash::Filters::Duration < LogStash::Filters::Base
 
     if @iso
       # TODO parse duration in ISO format
-
-      event.set("duration", @iso)
     end
 
     filter_matched(event)
