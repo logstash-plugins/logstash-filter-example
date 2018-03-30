@@ -4,11 +4,11 @@ language: ruby
 cache: bundler
 matrix:
   include:
-  - rvm: jruby-9.1.13.0
+  - rvm: jruby-9.1.12.0
     env: LOGSTASH_BRANCH=master
-  - rvm: jruby-9.1.13.0
+  - rvm: jruby-9.1.12.0
     env: LOGSTASH_BRANCH=6.x
-  - rvm: jruby-9.1.13.0
+  - rvm: jruby-9.1.12.0
     env: LOGSTASH_BRANCH=6.0
   - rvm: jruby-1.7.27
     env: LOGSTASH_BRANCH=5.6
